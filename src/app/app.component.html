@@ -13,3 +13,10 @@
     <button (click)="deleteItem(i)">Borrar</button>
   </li>
 </ul>
+
+
+<div class="" *ngFor="let product of products">
+  {{product.title }}
+  <img [src]="product.image">
+  ${{ product.price}}
+</div>
