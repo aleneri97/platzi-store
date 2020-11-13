@@ -5,6 +5,22 @@
   Esto es un div
 </div>
 
+<div *ngIf="title.length == 14">
+  Esto es un div de 14
+</div>
+
+
+<div *ngIf="title.length == 16">
+  Esto es un div de 16
+</div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Manuel'">Este es Manuel</p>
+  <p *ngSwitchCase="'Alejandro'">Este es Alejandro</p>
+  <p *ngSwitchCase="'Neri'">Este es Neri</p>
+  <p *ngSwitchDefault>No hay match</p>
+</div>
+
 <button (click)="addItem()">Add user</button>
 
 <ul>
