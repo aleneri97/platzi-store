@@ -1,7 +1,6 @@
 <input type="text" [(ngModel)]="title">
 {{ title }}
-
-<app-product></app-product>
+ 
 
 <div *ngIf="title.length == 12">
   Esto es un div
@@ -20,7 +19,7 @@
   <p *ngSwitchCase="'Manuel'">Este es Manuel</p>
   <p *ngSwitchCase="'Alejandro'">Este es Alejandro</p>
   <p *ngSwitchCase="'Neri'">Este es Neri</p>
-  <p *ngSwitchDefault>No hay match</p>
+  <p *ngSwitchDefault>No hay matches</p>
 </div>
 
 <button (click)="addItem()">Add user</button>
@@ -33,8 +32,6 @@
 </ul>
 
 
-<div class="" *ngFor="let product of products">
-  {{product.title }}
-  <img [src]="product.image">
-  ${{ product.price}}
+<div *ngFor="let product of products">
+  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
 </div>
