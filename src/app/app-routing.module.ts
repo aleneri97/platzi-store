@@ -17,16 +17,24 @@ const routes: Routes = [
       },
       {
         path: "home",
-        loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
+        loadChildren: () =>
+          import("./home/home.module").then((m) => m.HomeModule),
       },
       {
         path: "products",
-        loadChildren: () => import("./products/products.module").then((m) => m.ProductsModule),
+        loadChildren: () =>
+          import("./products/products.module").then((m) => m.ProductsModule),
       },
       {
         path: "contact",
         // canActivate: [AdminGuard],
-        loadChildren: () => import("./contact/contact.module").then((m) => m.ContactModule)
+        loadChildren: () =>
+          import("./contact/contact.module").then((m) => m.ContactModule),
+      },
+      {
+        path: "about",
+        loadChildren: () =>
+          import("./about-us/about-us.module").then((m) => m.AboutUsModule),
       },
       {
         path: "demo",
