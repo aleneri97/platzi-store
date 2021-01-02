@@ -14,47 +14,53 @@ var page_not_found_component_1 = require("./page-not-found/page-not-found.compon
 var layout_component_1 = require("./layout/layout.component");
 var routes = [
     {
-        path: "",
+        path: '',
         component: layout_component_1.LayoutComponent,
         children: [
             {
-                path: "",
-                redirectTo: "/home",
-                pathMatch: "full"
+                path: '',
+                redirectTo: '/home',
+                pathMatch: 'full'
             },
             {
-                path: "home",
+                path: 'home',
                 loadChildren: function () {
-                    return Promise.resolve().then(function () { return require("./home/home.module"); }).then(function (m) { return m.HomeModule; });
+                    return Promise.resolve().then(function () { return require('./home/home.module'); }).then(function (m) { return m.HomeModule; });
                 }
             },
             {
-                path: "products",
+                path: 'products',
                 loadChildren: function () {
-                    return Promise.resolve().then(function () { return require("./products/products.module"); }).then(function (m) { return m.ProductsModule; });
+                    return Promise.resolve().then(function () { return require('./products/products.module'); }).then(function (m) { return m.ProductsModule; });
                 }
             },
             {
-                path: "contact",
+                path: 'contact',
                 // canActivate: [AdminGuard],
                 loadChildren: function () {
-                    return Promise.resolve().then(function () { return require("./contact/contact.module"); }).then(function (m) { return m.ContactModule; });
+                    return Promise.resolve().then(function () { return require('./contact/contact.module'); }).then(function (m) { return m.ContactModule; });
                 }
             },
             {
-                path: "about",
+                path: 'about',
                 loadChildren: function () {
-                    return Promise.resolve().then(function () { return require("./about-us/about-us.module"); }).then(function (m) { return m.AboutUsModule; });
+                    return Promise.resolve().then(function () { return require('./about-us/about-us.module'); }).then(function (m) { return m.AboutUsModule; });
                 }
             },
             {
-                path: "demo",
+                path: 'demo',
                 component: demo_component_1.DemoComponent
             },
         ]
     },
     {
-        path: "**",
+        path: 'admin',
+        loadChildren: function () {
+            return Promise.resolve().then(function () { return require('./admin/admin.module'); }).then(function (m) { return m.AdminModule; });
+        }
+    },
+    {
+        path: '**',
         component: page_not_found_component_1.PageNotFoundComponent
     },
 ];

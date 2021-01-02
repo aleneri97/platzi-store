@@ -7,43 +7,48 @@ import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full",
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
       },
       {
-        path: "home",
+        path: 'home',
         loadChildren: () =>
-          import("./home/home.module").then((m) => m.HomeModule),
+          import('./home/home.module').then((m) => m.HomeModule),
       },
       {
-        path: "products",
+        path: 'products',
         loadChildren: () =>
-          import("./products/products.module").then((m) => m.ProductsModule),
+          import('./products/products.module').then((m) => m.ProductsModule),
       },
       {
-        path: "contact",
+        path: 'contact',
         // canActivate: [AdminGuard],
         loadChildren: () =>
-          import("./contact/contact.module").then((m) => m.ContactModule),
+          import('./contact/contact.module').then((m) => m.ContactModule),
       },
       {
-        path: "about",
+        path: 'about',
         loadChildren: () =>
-          import("./about-us/about-us.module").then((m) => m.AboutUsModule),
+          import('./about-us/about-us.module').then((m) => m.AboutUsModule),
       },
       {
-        path: "demo",
+        path: 'demo',
         component: DemoComponent,
       },
     ],
   },
   {
-    path: "**",
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: '**',
     component: PageNotFoundComponent,
   },
 ];

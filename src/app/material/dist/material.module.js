@@ -17,6 +17,8 @@ var card_1 = require("@angular/material/card");
 var form_field_1 = require("@angular/material/form-field");
 var select_1 = require("@angular/material/select");
 var input_1 = require("@angular/material/input");
+var radio_1 = require("@angular/material/radio");
+var forms_1 = require("@angular/forms");
 var MaterialModule = /** @class */ (function () {
     function MaterialModule() {
     }
@@ -32,7 +34,9 @@ var MaterialModule = /** @class */ (function () {
                 card_1.MatCardModule,
                 form_field_1.MatFormFieldModule,
                 select_1.MatSelectModule,
-                input_1.MatInputModule
+                input_1.MatInputModule,
+                radio_1.MatRadioModule,
+                forms_1.ReactiveFormsModule
             ],
             exports: [
                 button_1.MatButtonModule,
@@ -42,7 +46,9 @@ var MaterialModule = /** @class */ (function () {
                 card_1.MatCardModule,
                 form_field_1.MatFormFieldModule,
                 select_1.MatSelectModule,
-                input_1.MatInputModule
+                input_1.MatInputModule,
+                radio_1.MatRadioModule,
+                forms_1.ReactiveFormsModule
             ]
         })
     ], MaterialModule);
