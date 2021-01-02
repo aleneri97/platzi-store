@@ -5,18 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.scss']
 })
-export class DemoComponent implements OnInit{
+export class DemoComponent implements OnInit {
+
+  title = 'platzi-store';
+  items = ['Manuel', 'Alejandro', 'Neri'];
+  power = 10;
 
   ngOnInit() {
   }
 
-  title = "platzi-store";
-  items = ["Manuel", "Alejandro", "Neri"];
-
-  power = 10;
-
   addItem() {
-    this.items.push("Nuevo item");
+    this.items.push('Nuevo item');
   }
 
   deleteItem(index: number) {

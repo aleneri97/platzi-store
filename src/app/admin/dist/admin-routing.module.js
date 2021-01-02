@@ -9,8 +9,10 @@ exports.__esModule = true;
 exports.AdminRoutingModule = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var dashboard_component_1 = require("./components/dashboard/dashboard.component");
 var nav_component_1 = require("./components/nav/nav.component");
 var product_form_component_1 = require("./components/product-form/product-form.component");
+var table_component_1 = require("./components/table/table.component");
 var routes = [
     {
         path: '',
@@ -19,6 +21,14 @@ var routes = [
             {
                 path: 'create',
                 component: product_form_component_1.ProductFormComponent
+            },
+            {
+                path: 'read',
+                component: table_component_1.TableComponent
+            },
+            {
+                path: '',
+                component: dashboard_component_1.DashboardComponent
             }
         ]
     }
