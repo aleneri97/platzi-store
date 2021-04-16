@@ -9,12 +9,21 @@ import { ProductsService } from '../../../core/services/products/products.servic
   styleUrls: ["./products.component.scss"],
 })
 export class ProductsComponent implements OnInit {
+  products : Product[];
 
   constructor(private productsService: ProductsService) {}
 
-  products = this.productsService.getAllProducts();
+  ngOnInit() {
+    this.fetchProducts();
+  }
 
-  ngOnInit() {}
+  fetchProducts() {
+    this.productsService
+    .getAllProducts()
+    .subscribe(products => {
+      this.products = products;
+    });
+  }
 
   clickProduct(id: number) {
     console.log("Product ID");
