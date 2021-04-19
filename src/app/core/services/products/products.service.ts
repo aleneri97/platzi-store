@@ -9,6 +9,7 @@ import { Product } from './../../../product.model';
 })
 export class ProductsService {
 
+
   constructor(private http:HttpClient) {}
 
   getAllProducts() {
@@ -16,6 +17,10 @@ export class ProductsService {
   }
 
   getProduct(id: string) {
-    return this.http.get<Product>(environment.url_api+id);
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete<Product>(`${environment.url_api}/products/${id}`);
   }
 }

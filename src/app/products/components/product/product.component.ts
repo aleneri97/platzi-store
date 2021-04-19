@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit,OnDestroy{
   today = new Date();
 
   constructor() {
-    console.log('1. constructor');
+    // console.log('1. constructor');
   }
 
   // ngOnChanges(changes:SimpleChanges) {
@@ -22,20 +22,20 @@ export class ProductComponent implements OnInit,OnDestroy{
   // }
 
   ngOnInit() {
-    console.log('3. ngOnInit');
+    // console.log('3. ngOnInit');
   }
 
   ngDoCheck() {
-    console.log('4. DoCheck');
+    // console.log('4. DoCheck');
   }
 
   ngOnDestroy() {
-    console.log('5. OnDestroy');
+    // console.log('5. OnDestroy');
 
   }
 
   addCart(){
-    console.log('Añadir al carrito');
+    // console.log('Añadir al carrito');
     this.productClicked.emit(this.product.id);
   }
 }
