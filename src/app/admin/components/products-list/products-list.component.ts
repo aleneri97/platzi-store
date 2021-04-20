@@ -15,13 +15,16 @@ export class ProductsListComponent implements OnInit {
 
   constructor(private productsService: ProductsService, private snackBar: MatSnackBar) { }
 
-  ngOnInit() {
-    this.fetchProducts();
+  async ngOnInit() {
+    await this.fetchProducts();
   }
 
   fetchProducts() {
-    this.productsService.getAllProducts().subscribe(products => {
-      this.products = products;
+    return new Promise((resolve, reject) => {
+      this.productsService.getAllProducts().subscribe(products => {
+        this.products = products;
+        resolve(true);
+      })
     })
   }
 
