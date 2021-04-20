@@ -10,6 +10,7 @@ import { TableComponent } from './components/table/table.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OrdersListComponent } from './components/orders-list/orders-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     ProductFormComponent,
     ProductsListComponent,
-    TableComponent
+    TableComponent,
+    OrdersListComponent,
   ],
   imports: [
     CommonModule,
