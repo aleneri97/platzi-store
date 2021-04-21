@@ -16,12 +16,25 @@
       </ul>
     </div>
     <div class="contact">
+      <mat-form-field appearance="outline">
+        <mat-label>Correo Electrónico</mat-label>
+        <input
+          matInput
+          placeholder="Digite su correo"
+          [formControl]="emailField"
+          type="email"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
       <h3>Contacto</h3>
-      <ul>
-        <li><a routerLink="" class="footer-link">Prueba</a></li>
-        <li><a routerLink="" class="footer-link">Prueba</a></li>
-        <li><a routerLink="" class="footer-link">Prueba</a></li>
-      </ul>
+      <button
+        mat-raised-button
+        [disabled]="emailField.invalid"
+        (click)="sendMail()"
+      >
+        Enviar
+      </button>
+      <!-- <p *ngIf="!emailField.valid">El campo no es válido</p> -->
     </div>
   </div>
 </footer>

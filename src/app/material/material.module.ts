@@ -27,6 +27,7 @@ import { MatGridListModule, MatListModule, MatMenuModule, MatPaginatorModule, Ma
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatFormFieldModule,
     MatRadioModule,
 
     LayoutModule,
@@ -52,6 +53,7 @@ import { MatGridListModule, MatListModule, MatMenuModule, MatPaginatorModule, Ma
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatFormFieldModule,
     MatRadioModule,
 
     LayoutModule,
