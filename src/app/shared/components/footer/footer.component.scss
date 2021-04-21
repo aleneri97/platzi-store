@@ -1,0 +1,48 @@
+footer {
+  background: rgb(63, 81, 181);
+  padding: 24px 64px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+  font-size: .85rem;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+h3 {
+  font-weight: bold;
+  color: white;
+  margin: 12px 0;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  margin-top: 6px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.products {
+  flex-grow: 1;
+}
+
+.about {
+  flex-grow: 1;
+}
+
+.contact {
+  flex-grow: 1;
+}
