@@ -8,21 +8,21 @@ import { Product } from 'src/app/product.model';
 export class OrdersService {
 
   today = new Date();
-  dateMade = this.today.getFullYear()+'-'+(this.today.getMonth()+1)+'-'+this.today.getDate();
+  dateMade = this.today.getFullYear() + '-' + (this.today.getMonth() + 1) + '-' + this.today.getDate();
 
-  orders:Order[] = [
+  orders: Order[] = [
     {
-      id: "1",
-      user: "Pine",
+      id: '1',
+      user: 'Pine',
       date: this.dateMade,
       total: 123,
       products: [
         {
-          id: "1",
-          title: "Sticker",
+          id: '1',
+          title: 'Sticker',
           price: 123,
-          description: "Nothing",
-          image: "assets/images/sticker.png"
+          description: 'Nothing',
+          image: 'assets/images/sticker.png'
         }
       ],
       isExpanded: false,
@@ -31,7 +31,7 @@ export class OrdersService {
 
   constructor() { }
 
-  getAllOrders():Order[] {
+  getAllOrders(): Order[] {
     return this.orders;
   }
 }

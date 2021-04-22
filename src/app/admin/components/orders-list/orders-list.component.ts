@@ -12,7 +12,7 @@ import { Order } from 'src/app/order.model';
 export class OrdersListComponent implements OnInit {
 
   orders: Order[];
-  displayedColumns: string[] = ['id', 'user', 'date', 'products', 'total','actions'];
+  displayedColumns: string[] = ['id', 'user', 'date', 'products', 'total', 'actions'];
 
 
   constructor(private ordersService: OrdersService) { }
@@ -21,7 +21,7 @@ export class OrdersListComponent implements OnInit {
     this.fetchOrders();
   }
 
-  fetchOrders(){
+  fetchOrders() {
     this.orders = this.ordersService.getAllOrders();
   }
 

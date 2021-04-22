@@ -14,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product;
 
-  constructor(private route: ActivatedRoute, private productsService: ProductsService, private http:HttpClient) { }
+  constructor(private route: ActivatedRoute, private productsService: ProductsService, private http: HttpClient) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -26,6 +26,6 @@ export class ProductDetailComponent implements OnInit {
   fetchProduct(id: string) {
     this.productsService.getProduct(id).subscribe((product: Product) => {
       this.product = product;
-    })
+    });
   }
 }

@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
 
   sendMail() {
     if (this.emailField.valid) {
-      console.log(this.emailField.value)
+      console.log(this.emailField.value);
     }
   }
 

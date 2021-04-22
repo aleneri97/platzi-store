@@ -11,6 +11,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
+import { FormProductComponent } from './components/form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { OrdersListComponent } from './components/orders-list/orders-list.compon
     ProductsListComponent,
     TableComponent,
     OrdersListComponent,
+    FormProductComponent,
   ],
   imports: [
     CommonModule,

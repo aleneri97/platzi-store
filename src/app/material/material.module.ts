@@ -13,7 +13,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatGridListModule, MatListModule, MatMenuModule, MatPaginatorModule, MatSidenavModule, MatSortModule, MatTableModule } from '@angular/material';
+import { MatGridListModule,
+        MatListModule,
+        MatMenuModule,
+        MatPaginatorModule,
+        MatSidenavModule,
+        MatSortModule,
+        MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [],

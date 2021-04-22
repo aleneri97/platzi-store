@@ -4,12 +4,12 @@ import { Product } from '../../../product.model';
 import { ProductsService } from '../../../core/services/products/products.service';
 
 @Component({
-  selector: "app-products",
-  templateUrl: "./products.component.html",
-  styleUrls: ["./products.component.scss"],
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products : Product[];
+  products: Product[];
 
   constructor(private productsService: ProductsService) {}
 
@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
   }
 
   clickProduct(id: number) {
-    console.log("Product ID");
+    console.log('Product ID');
     console.log(id);
   }
 }

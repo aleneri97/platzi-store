@@ -10,7 +10,7 @@ import { Product } from 'src/app/product.model';
 })
 export class ProductsListComponent implements OnInit {
 
-  products : Product[];
+  products: Product[];
   displayedColumns: string[] = ['id', 'title', 'price', 'actions'];
 
   constructor(private productsService: ProductsService, private snackBar: MatSnackBar) { }
@@ -24,13 +24,13 @@ export class ProductsListComponent implements OnInit {
       this.productsService.getAllProducts().subscribe(products => {
         this.products = products;
         resolve(true);
-      })
-    })
+      });
+    });
   }
 
   deleteProduct(product: Product) {
     // Iniciar SnackBar
-    let snack = this.snackBar.open('Item eliminado', 'Deshacer', {
+    const snack = this.snackBar.open('Item eliminado', 'Deshacer', {
       duration: 3000,
     });
 
@@ -42,7 +42,7 @@ export class ProductsListComponent implements OnInit {
     }
 
     // Timeout para invocar  eliminación con API
-    let timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
       this.productsService.deleteProduct(product.id).subscribe(res => {
         if (!res) {
           console.log('Error en el API');
@@ -50,13 +50,13 @@ export class ProductsListComponent implements OnInit {
           console.log('Eliminado');
         }
       });
-    },3000)
+    }, 3000);
 
     // Undo cancelando timeout y regresando backup al arreglo local
     snack.onAction().subscribe(() => {
       clearTimeout(timeout);
-      console.log("Se ha cancelado la eliminación");
-      this.products.splice(index,0,product);
+      console.log('Se ha cancelado la eliminación');
+      this.products.splice(index, 0, product);
       this.products = [...this.products];
     });
   }

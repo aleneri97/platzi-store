@@ -1,13 +1,13 @@
-import { Component,Input,Output,EventEmitter,OnChanges,SimpleChanges,OnInit,OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, OnDestroy } from '@angular/core';
 import { Product } from '../../../product.model';
 
 @Component({
-  selector: "app-product",
-  templateUrl: "./product.component.html",
-  styleUrls: ["./product.component.scss"]
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit,OnDestroy{
-  @Input() product:Product;
+export class ProductComponent implements OnInit, OnDestroy {
+  @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
   today = new Date();
@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit,OnDestroy{
 
   }
 
-  addCart(){
+  addCart() {
     // console.log('Añadir al carrito');
     this.productClicked.emit(this.product.id);
   }

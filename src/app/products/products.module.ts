@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
