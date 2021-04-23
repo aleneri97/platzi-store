@@ -16,7 +16,15 @@
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2">
           <div class="box">
-            {{ product.price }}
+            {{ product.price | currency }}
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="box">
+            TOTAL:
+            <label>
+              <b>({{ product | cartrepeat }})</b>
+            </label>
           </div>
         </div>
       </div>
