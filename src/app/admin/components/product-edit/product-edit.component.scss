@@ -8,12 +8,8 @@
         display: grid;
         margin:0;
         grid-template-columns: 1fr;
-        grid-template-rows: 70px 70px 70px 70px 0.1fr;
-        grid-template-areas: "id" "title" "price" "image" "description";
-    }
-    .id{
-        grid-area: id;
-        font-size: 14px;
+        grid-template-rows: 70px 70px 70px 0.1fr;
+        grid-template-areas: "title" "price" "image" "description";
     }
     .title{
         grid-area: title;

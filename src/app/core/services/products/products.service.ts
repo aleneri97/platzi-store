@@ -9,7 +9,6 @@ import { Product } from './../../../product.model';
 })
 export class ProductsService {
 
-
   constructor(private http: HttpClient) {}
 
   getAllProducts() {
@@ -26,5 +25,9 @@ export class ProductsService {
 
   createProduct(product: Product) {
     return this.http.post<Product>(`${environment.url_api}/products`, product);
+  }
+
+  updateProduct(id: string, product: Product) {
+    return this.http.put<Product>(`${environment.url_api}/products/${id}`, product);
   }
 }

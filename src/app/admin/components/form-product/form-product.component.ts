@@ -27,6 +27,10 @@ export class FormProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  cancelForm() {
+    this.router.navigate(['./admin/products']);
+  }
+
   saveProduct(event: Event){
     event.preventDefault();
     if (this.form.valid) {
