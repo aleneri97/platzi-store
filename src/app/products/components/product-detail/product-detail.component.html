@@ -1,4 +1,4 @@
-<div class="" *ngIf="product">
+<div class="" *ngIf="(product$ | async) as product">
   <div class="">
     <img [src]="product.image" alt="" />
     <div class="">
