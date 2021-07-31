@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { Product } from './../../../product.model';
@@ -39,6 +39,14 @@ export class ProductsService {
   }
 
   getRandomUsers(): Observable<User[]> {
-    return this.http.get('https://randomuser.me/api/?results=2').pipe(map((res: any) => res.results as User[]));
+    return this.http.get('https://randomudsdsdsdsdser.me/api/?results=2')
+      .pipe(
+        catchError(this.handleError),
+        map((res: any) => res.results as User[]));
+  }
+
+  private handleError(error: HttpErrorResponse ) {
+    console.error(error);
+    return throwError('Method not implemented.');
   }
 }
