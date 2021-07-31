@@ -1,9 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { Product } from './../../../product.model';
 
+interface User{
+  email: string;
+  gender: string;
+  phone: string;
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -29,5 +36,9 @@ export class ProductsService {
 
   updateProduct(id: string, product: Product) {
     return this.http.put<Product>(`${environment.url_api}/products/${id}`, product);
+  }
+
+  getRandomUsers(): Observable<User[]> {
+    return this.http.get('https://randomuser.me/api/?results=2').pipe(map((res: any) => res.results as User[]));
   }
 }

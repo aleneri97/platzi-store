@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { ProductsService } from '@core/services/products/products.service';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Product } from 'src/app/product.model';
 
 @Component({
@@ -59,5 +60,12 @@ export class ProductDetailComponent implements OnInit {
       console.log(rta);
     });
   }
+
+  getRandomUsers() {
+    this.productsService.getRandomUsers()
+    .subscribe(users => {
+      console.log(users);
+    });
   }
+
 }
