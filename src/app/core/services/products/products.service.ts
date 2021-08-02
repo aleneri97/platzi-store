@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import * as Sentry from '@sentry/browser';
 
@@ -42,6 +42,7 @@ export class ProductsService {
   getRandomUsers(): Observable<User[]> {
     return this.http.get('https://randomudsdsdsdsdser.me/api/?results=2')
       .pipe(
+        retry(3),
         catchError(this.handleError),
         map((res: any) => res.results as User[]));
   }
