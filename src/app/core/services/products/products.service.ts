@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import * as Sentry from '@sentry/browser';
 
 import { Product } from './../../../product.model';
 
@@ -47,6 +48,7 @@ export class ProductsService {
 
   private handleError(error: HttpErrorResponse ) {
     console.error(error);
+    Sentry.captureException(error);
     return throwError('Method not implemented.');
   }
 }
